@@ -1,0 +1,26 @@
+# Runtime data does not belong in this repository, even when ignored.
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+.codex/
+.caseboard/
+.office-system/
+.office-workbench.json
+ACTIVE/
+ARCHIVE/
+INBOX/
+SERIES/
+KNOWLEDGE/
+INDEX/
+DERIVED/
+工作看板.md
+*.log
+*.zip
+*.png
+*.jpg
+*.pdf
+*.docx
+*.xlsx
+*.jsonl
