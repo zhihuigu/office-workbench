@@ -1,0 +1,3 @@
+# Private data: defense in depth only; never initialize or publish this workspace.
+*
+!/.gitignore
