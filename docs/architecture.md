@@ -10,7 +10,7 @@
 
 `workbench.py init` 从明确文件列表装入新目录。`.office-system/releases/<版本-内容摘要>/` 内放运行时、模板和该版手册，`.office-workbench.json` 保存格式、相对版本标记与各文件哈希。根 office.py 检查安装完整性，显式传入自身私人目录，拒绝用户传另一个 root。
 
-所有运行时文件为独立副本，不链接到源码。root、父路径和控制文件链接有防误用检查；这不是抵御恶意本地竞态的操作系统沙箱。核心无网络或登录依赖。Codex 的规则入口是根 AGENTS.md，补充偏好在 LOCAL.md，无全局 Skill 或固定模型要求。
+所有运行时文件为独立副本，不链接到源码。root、父路径和控制文件链接有防误用检查；这不是抵御恶意本地竞态的操作系统沙箱。核心无网络或登录依赖。AI Agent 的规则入口是根 AGENTS.md，补充偏好在 LOCAL.md，无全局 Skill 或固定模型要求。
 
 ## 权威、事务、检索
 
@@ -26,4 +26,4 @@
 
 发布检查为 `python -I -B tools/release.py check`，使用 `PUBLIC_FILES.txt` 明确白名单。打包为 `python -I -B tools/release.py pack --output 外部新zip路径`。发布检查覆盖文件类别、链接和常见泄露模式，不代替人工审阅或授权确认。
 
-支持范围见 SUPPORT.md。开发者测试与本地 clean venv 验证不代表已经测试远端 GitHub Actions、不同电脑的 Codex 登录或连接器；不提供这样的承诺。
+支持范围见 SUPPORT.md。开发者测试与本地 clean venv 验证不代表已经测试远端 GitHub Actions、不同电脑的 AI Agent 登录或连接器；不提供这样的承诺。

@@ -48,7 +48,7 @@ python -I -B office.py refresh
 
 new 支持 `--created`、`--due`、`--next-action-due`、`--priority urgent|high|normal|low`、`--series-id`、`--series`、`--period`。日期缺省则按命令语义使用当天或留空，不自动推算。相似在办事项会阻止重复创建，确认独立后才用 `--allow-related-new`。
 
-update 可改 status、priority、due、next-action-due、waiting-for、next-action、current-version、submitted-version，并用 `--note` 留依据。清空可在交互 PowerShell 使用空字符串参数；不同终端对空参数传递不同，遇到参数缺失请让 Codex 用 Python subprocess 的参数列表传入 `''`，不要改成文本“无”假装空日期。
+update 可改 status、priority、due、next-action-due、waiting-for、next-action、current-version、submitted-version，并用 `--note` 留依据。清空可在交互 PowerShell 使用空字符串参数；不同终端对空参数传递不同，遇到参数缺失请让 AI Agent 用 Python subprocess 的参数列表传入 `''`，不要改成文本“无”假装空日期。
 
 以下操作仅在已得到明确用户授权时执行，示例中的确认说明应换成真实授权原意：
 

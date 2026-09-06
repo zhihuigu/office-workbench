@@ -11,7 +11,7 @@ python -I -B tests/run.py
 python -I -B tools/release.py check
 ```
 
-本地隔离测试验证脚本，不等于全新电脑的 Codex 会话或登录已经验收。请完成快速开始的会话自检。GitHub Actions 未执行，不提供 CI 已通过徽章。
+本地隔离测试验证脚本，不等于全新电脑的 AI Agent 会话或登录已经验收。请完成快速开始的会话自检。GitHub Actions 未执行，不提供 CI 已通过徽章。
 
 不支持自动生成 Office、附件全文搜索、邮件收发、钉钉联网、团队审批、计划任务、后台通知、自动恢复任意损坏、全局配置同步、自动 schema 迁移或恶意文件隔离。
 

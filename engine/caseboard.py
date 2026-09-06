@@ -1294,7 +1294,7 @@ def doctor_checks(root: Path) -> list[dict[str, str]]:
         add('FAIL','pending transaction',str(journal) + '；显式 repair --recover')
 
     add("PASS", "core dependencies", "只需 Python 标准库；不读取全局配置，不检查账户或可选连接器")
-    add("MANUAL", "Codex session", "请在私人目录开启会话，核实已读取 AGENTS.md；此检查不证明登录、权限或模型理解")
+    add("MANUAL", "AI Agent session", "请在私人目录开启会话，核实 Agent 已读取项目规则；此检查不证明登录、权限或模型理解")
     return checks
 
 
@@ -1352,7 +1352,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate = sub.add_parser("validate", help="校验所有 CASE")
     validate.set_defaults(func=cmd_validate)
 
-    doctor = sub.add_parser("doctor", aliases=["check"], help="检查工作台配置、生成视图和 Codex 集成静态条件")
+    doctor = sub.add_parser("doctor", aliases=["check"], help="检查工作台配置、生成视图和 AI Agent 集成静态条件")
     doctor.add_argument("--format", choices=("text", "json"), default="text")
     doctor.set_defaults(func=cmd_doctor)
 

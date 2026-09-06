@@ -133,7 +133,7 @@ def init(args):
     if destination.exists():
         raise ValueError('目标被其他进程建立；保留临时目录：'+str(staging))
     staging.rename(destination)
-    return {'workspace':str(destination),'version':state['version'],'next':'在 Codex 打开此私人目录，读取 START-HERE.md'}
+    return {'workspace':str(destination),'version':state['version'],'next':'在你的 AI Agent 中打开此私人目录，读取 START-HERE.md'}
 
 
 def tree_hashes(root, skip_lock_files=False):

@@ -8,7 +8,7 @@
 
 ## 创建并检验备份
 
-先停止 Codex、编辑器或同步工具对该私人目录的写入，关闭正编辑的材料。在**代码目录**的 PowerShell 运行（目标父目录必须已存在，目标不能已经存在）：
+先停止 AI Agent、编辑器或同步工具对该私人目录的写入，关闭正编辑的材料。在**代码目录**的 PowerShell 运行（目标父目录必须已存在，目标不能已经存在）：
 
 ```powershell
 python -I -B .\workbench.py backup --workspace "$env:USERPROFILE\MyOffice" --destination "$env:USERPROFILE\MyOfficeBackup-01" --dry-run
@@ -31,14 +31,14 @@ python -I -B "$env:USERPROFILE\MyOfficeRestored\office.py" doctor
 
 恢复必须使用可信的本项目备份，校验 manifest 与文件/目录一致，不接受覆盖原目录。运行时完整性校验使用备份中的信任数据，并不是防御恶意备份的代码审计；不要恢复陌生人发来的工作目录。
 
-在新目录抽查若干 CASE 和 Final：运行 search、verify-final，打开关键成果，再用 refresh 重建显示日期。Codex 改为打开新目录，避免同时在两个副本里继续工作。旧目录和备份先保留。
+在新目录抽查若干 CASE 和 Final：运行 search、verify-final，打开关键成果，再用 refresh 重建显示日期。AI Agent 改为打开新目录，避免同时在两个副本里继续工作。旧目录和备份先保留。
 
 ## 换电脑或换磁盘
 
 1. 停写后做上述完整备份，将整个备份文件夹通过自己的安全方式传到新电脑。
-2. 新电脑安装可用 Python，自己安装并登录 Codex；不要复制旧电脑的 Codex 登录、cookie、token 或全局配置。
+2. 新电脑安装可用 Python，自己安装并登录 AI Agent；不要复制旧电脑的 AI Agent 登录、cookie、token 或全局配置。
 3. 下载相同或已验证兼容的代码版本，在新私人目录执行 restore。
-4. 运行 doctor、validate、若干 verify-final；进入 Codex 做快速开始中的会话自检。
+4. 运行 doctor、validate、若干 verify-final；进入 AI Agent 做快速开始中的会话自检。
 5. 可选连接器在新电脑按其官方方法重新安装、授权，只迁移自己批准的非敏感偏好。
 
 也可以在全部停写且没有待恢复事务时完整复制私人目录；路径改名不影响相对引用。不要只复制 ACTIVE，不要漏掉隐藏安装目录和标记。已中断事务的恢复记录可能含绝对路径，必须先在原位置恢复完成，再迁移。网络共享盘、多机同时写和云盘冲突合并未经验证。
@@ -59,7 +59,7 @@ python -I -B "$env:USERPROFILE\MyOffice\office.py" doctor
 
 新运行时写入新版本目录，先校验现有 CASE，然后原子切换标记；旧版本保留，不删除历史。同版本、同内容是无操作。若根启动器不同，自动升级拒绝，先保留原目录，按后续版本专门说明迁移，不覆盖文件“试试看”。根 AGENTS 的新建议需要自己对比模板并决定是否采纳；个人补充尽量放 LOCAL.md。
 
-升级失败且标记未切换时旧版本仍可用；已经切换但业务抽查失败时，**恢复升级前备份到新目录**并验收，再切换 Codex 的项目位置。没有自动降级或合并两份工作目录；升级后新增工作应先保留并逐项迁移。
+升级失败且标记未切换时旧版本仍可用；已经切换但业务抽查失败时，**恢复升级前备份到新目录**并验收，再切换 AI Agent 的项目位置。没有自动降级或合并两份工作目录；升级后新增工作应先保留并逐项迁移。
 
 当前测试验证了本版升级机制与构造的新运行时快照，不能证明尚未发布的未来版本兼容。
 
@@ -67,10 +67,10 @@ python -I -B "$env:USERPROFILE\MyOffice\office.py" doctor
 
 | 现象 | 处理 |
 |---|---|
-| python 找不到或版本太旧 | 检查 Python 安装和终端；不写死别人的路径，不修改 Codex 全局配置 |
+| python 找不到或版本太旧 | 检查 Python 安装和终端；不写死别人的路径，不修改 AI Agent 全局配置 |
 | 目标已存在 | 使用不存在的新目标；不要清空已有工作目录 |
 | 目标在 Git 仓库内、父目录是链接 | 选独立本地路径，路径必须明确且不含 `..` |
-| doctor 有 MANUAL | 在 Codex 会话验证规则与本地命令；不表示必须安装连接器 |
+| doctor 有 MANUAL | 在 AI Agent 会话验证规则与本地命令；不表示必须安装连接器 |
 | 看板没更新、日期旧 | 先 validate，再 refresh；没有后台自动刷新 |
 | 路径不存在、CASE 解析失败 | 备份现场，核实文件名、引号、日期、相对路径与编码；不创建假材料 |
 | 找不到历史或扫描不完整 | 查看 json-v2 diagnostics，查 CASE，而不是只读索引；不要将空数组当不存在 |
